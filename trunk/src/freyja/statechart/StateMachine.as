@@ -106,6 +106,7 @@ package freyja.statechart
                 var reaction: Reaction = m_currentState.FindReaction( event );
                 
                 if ( null == reaction ) { continue; }
+                  // 並未預期對該事件有反應，直接丟棄事件。
                 
                 var transition: Transition = reaction as Transition;
                 if ( null != transition )

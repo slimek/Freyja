@@ -1,7 +1,7 @@
 package freyja.statechart 
 {
 	/**
-     * 
+     * 代表 state machine 之中的一個 state。
      */
     public class State 
     {
@@ -48,7 +48,8 @@ package freyja.statechart
             var reaction: Reaction = m_reactions[ eventName ];
             if ( null == reaction )
             {
-                throw Error( "Reaction of event " + eventName + " not found in state " + m_name );
+                trace( "Reaction of event \"" + eventName + "\" not found in state \"" + m_name + "\"" );
+                return null;
             }
             
             return reaction;
